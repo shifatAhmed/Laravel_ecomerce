@@ -20,4 +20,13 @@ Route::get('/', 'HomeController@index');
 
 //backend controller
 
-Route::get('/backend', 'AdminController@index');
+Route::get('/admin', 'AdminController@index');
+Route::get('/dashboard','AdminController@show_dashboard');
+Route::post('/admin_dashboard','AdminController@dashboard');
+Route::get('/logout','SuperAdminController@logout');
+
+//category routes
+
+Route::get('/add-category','CategoryController@index');
+Route::get('/all-category','CategoryController@all_category');
+Route::post('/save-category','CategoryController@save_category');
